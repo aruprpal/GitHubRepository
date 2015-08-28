@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.esb.ibm.com/iib/framework/environment" xmlns:env="http://www.esb.ibm.com/iib/framework/environment">
+    <xsd:element name="ESB" type="env:ESBType"></xsd:element>
+
+    <xsd:complexType name="ESBType">
+    	<xsd:sequence>
+    		<xsd:element name="Var" type="env:VarType" minOccurs="0" maxOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="VarType">
+    	<xsd:sequence>
+    		<xsd:element name="Log" type="env:LogType" minOccurs="0"
+    			maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="UniqueTransactionId" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="ServiceName" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="OperationName" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="Version" type="xsd:string" minOccurs="0"
+    			maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="SystemName" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="Headers" type="env:HeadersType" maxOccurs="1" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="LogType">
+    	<xsd:sequence>
+    		<xsd:element name="Invocation" type="env:InvocationType"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="Input" type="env:InputType" minOccurs="0" maxOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="InvocationType">
+    	<xsd:sequence>
+    		<xsd:element name="RequestName" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="ResponseName" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="TimeoutName" type="xsd:string"
+    			minOccurs="0" maxOccurs="1">
+    		</xsd:element>
+    		<xsd:element name="FaultName" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="InputType">
+    	<xsd:sequence>
+    		<xsd:element name="InputName" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+    		<xsd:element name="ReplyName" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+    		<xsd:element name="ErrorName" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="HeadersType">
+    	<xsd:sequence>
+    		<xsd:element name="MQ" type="env:MQType" maxOccurs="1" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="MQType">
+    	<xsd:sequence>
+    		<xsd:element name="ReplyToQ" type="xsd:string" maxOccurs="1"
+    			minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="ReplyToQMgr" type="xsd:string"
+    			maxOccurs="1" minOccurs="0">
+    		</xsd:element>
+    		<xsd:element name="MsgId" type="xsd:string" maxOccurs="1" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

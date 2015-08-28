@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmPassthru.msgnode="ComIbmPassthru.msgnode" xmlns:mbmonitor="http://www.ibm.com/wbi/2008/eflow_mbmonitor" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" 
+xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Logging/Logging.subflow" 
+nsPrefix="Logging_Logging.subflow">
+<eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+<eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.LogType" name="LogType" lowerBound="1"  defaultValueLiteral="ServiceIn">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<translation xmi:type="utility:TranslatableString" key="Logging" bundleName="Logging/Logging" pluginId="flowAPIgenerated"/>
+<colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj16/Logging.gif"/>
+<colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj30/Logging.gif"/>
+<composition>
+<nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="33,86">
+<translation xmi:type="utility:TranslatableString" key="InTerminal.Input" bundleName="Logging/Logging" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="210,86">
+<translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="Logging/Logging" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="ComIbmPassthru.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="123,86">
+<translation xmi:type="utility:ConstantString" string="Log"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+<monitorEvents eventSourceDescription="In terminal" eventSourceName="Log.terminal.in" eventIdentity="$Environment/env:ESB/Var/Log/Input/InputName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Input/InputName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+</nodes>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+</composition>
+<propertyOrganizer>
+<propertyDescriptor groupName="Group.Basic" configurable="true" userDefined="true" describedAttribute="Property.LogType">
+<propertyName xmi:type="utility:TranslatableString" key="Property.LogType" bundleName="Logging/Logging" pluginId="flowAPIgenerated"/>
+</propertyDescriptor>
+</propertyOrganizer>
+<stickyBoard>
+<stickyNote location="25,153" >
+<body xmi:type="utility:ConstantString" string="Use this subflow only if you want to add additional log point other than entry and exit points. &#xA;Entry and exit points are automatically logged by ESB framework"/>
+</stickyNote>
+</stickyBoard>
+</eClassifiers>
+</ecore:EPackage>

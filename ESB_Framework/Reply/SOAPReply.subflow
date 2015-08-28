@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmSOAPReply.msgnode="ComIbmSOAPReply.msgnode" xmlns:ComIbmHTTPHeader.msgnode="ComIbmHTTPHeader.msgnode" xmlns:mbmonitor="http://www.ibm.com/wbi/2008/eflow_mbmonitor" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" 
+xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Reply/SOAPReply.subflow" 
+nsPrefix="Reply_SOAPReply.subflow">
+<eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+<eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.transactionMode" name="transactionMode" eType="//@eClassifiers.1"   defaultValueLiteral="automatic"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.validateFailureAction" name="validateFailureAction" lowerBound="1" eType="//@eClassifiers.2"   defaultValueLiteral="exception"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.validateMaster" name="validateMaster" lowerBound="1" eType="//@eClassifiers.3"   defaultValueLiteral="inherit"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.allowMTOM" name="allowMTOM"  defaultValueLiteral="false">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.allowMTOM.internal_npcompiler" name="allowMTOM.internal_npcompiler" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<translation xmi:type="utility:TranslatableString" key="SOAPReply" bundleName="Reply/SOAPReply" pluginId="flowAPIgenerated"/>
+<colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj16/SOAPReply.gif"/>
+<colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj30/SOAPReply.gif"/>
+<composition>
+<nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="20,20">
+<translation xmi:type="utility:TranslatableString" key="InTerminal.Input" bundleName="Reply/SOAPReply" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="282,28">
+<translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="Reply/SOAPReply" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="180,24">
+<translation xmi:type="utility:ConstantString" string="SOAP Reply"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+<monitorEvents eventSourceDescription="In terminal" eventSourceName="SOAP Reply.terminal.in" eventIdentity="$Environment/env:ESB/Var/Log/Input/ReplyName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData encoding="base64Binary" />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Input/ReplyName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+</nodes>
+<nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="86,20" httpReplyHeader="Modify">
+<translation xmi:type="utility:ConstantString" string="HTTP Header"/>
+<nameValue4ReplyHeader name="ETag" type="XPath" value="$Environment/env:ESB/Var/UniqueTransactionId"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+</nodes>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+</composition>
+<propertyOrganizer>
+<propertyDescriptor groupName="Group.Transactions" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.soap.SoapReplyTransactionModeEditor" describedAttribute="Property.transactionMode">
+<propertyName xmi:type="utility:TranslatableString" key="Property.transactionMode" bundleName="ComIbmSOAPReply" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Validation" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.ValidateMasterListenerPropertyEditor" describedAttribute="Property.validateFailureAction">
+<propertyName xmi:type="utility:TranslatableString" key="Property.validateFailureAction" bundleName="ComIbmSOAPReply" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Validation" configurable="true" describedAttribute="Property.validateMaster">
+<propertyName xmi:type="utility:TranslatableString" key="Property.validateMaster" bundleName="ComIbmSOAPReply" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.WS.Extensions" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.BooleanEditorWithCheckboxInFront" compiler="com.ibm.etools.mft.ibmnodes.compilers.BooleanPropertyCompiler" configurable="true" describedAttribute="Property.allowMTOM">
+<propertyName xmi:type="utility:TranslatableString" key="Property.allowMTOM" bundleName="ComIbmSOAPReply" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.InternalRuntimeGroup" userDefined="true" hidden="true" readOnly="true" describedAttribute="Property.allowMTOM.internal_npcompiler">
+<propertyName xmi:type="utility:TranslatableString" key="Property.allowMTOM.internal_npcompiler" bundleName="Reply/SOAPReply" pluginId="flowAPIgenerated"/>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyOrganizer>
+<attributeLinks promotedAttribute="Property.transactionMode" overriddenNodes="FCMComposite_1_2">
+<overriddenAttribute href="ComIbmSOAPReply.msgnode#Property.transactionMode"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.validateFailureAction" overriddenNodes="FCMComposite_1_2">
+<overriddenAttribute href="ComIbmSOAPReply.msgnode#Property.validateFailureAction"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.validateMaster" overriddenNodes="FCMComposite_1_2">
+<overriddenAttribute href="ComIbmSOAPReply.msgnode#Property.validateMaster"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.allowMTOM" overriddenNodes="FCMComposite_1_2">
+<overriddenAttribute href="ComIbmSOAPReply.msgnode#Property.allowMTOM"/>
+</attributeLinks>
+<stickyBoard/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="transactionMode.yes" name="yes" />
+<eLiterals xmi:id="transactionMode.no" name="no" value="1"/>
+<eLiterals xmi:id="transactionMode.automatic" name="automatic" value="2"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="validateFailureAction.userTrace" name="userTrace" />
+<eLiterals xmi:id="validateFailureAction.localError" name="localError" value="1"/>
+<eLiterals xmi:id="validateFailureAction.exception" name="exception" value="2"/>
+<eLiterals xmi:id="validateFailureAction.exceptionList" name="exceptionList" value="3"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="validateMaster.none" name="none" />
+<eLiterals xmi:id="validateMaster.contentAndValue" name="contentAndValue" value="1"/>
+<eLiterals xmi:id="validateMaster.content" name="content" value="2"/>
+<eLiterals xmi:id="validateMaster.inherit" name="inherit" value="3"/>
+</eClassifiers>
+</ecore:EPackage>

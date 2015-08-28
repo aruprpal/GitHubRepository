@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmFilter.msgnode="ComIbmFilter.msgnode" xmlns:ComIbmMQGet.msgnode="ComIbmMQGet.msgnode" xmlns:ComIbmMQHeader.msgnode="ComIbmMQHeader.msgnode" xmlns:mbmonitor="http://www.ibm.com/wbi/2008/eflow_mbmonitor" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" 
+xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Request/MQRequestResponse.subflow" 
+nsPrefix="Request_MQRequestResponse.subflow">
+<eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+<eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.System_Name" name="System_Name" lowerBound="1"  defaultValueLiteral="D">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Request.QM.Name" name="Request.QM.Name" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Request.Queue.Name" name="Request.Queue.Name"  defaultValueLiteral="DUMMY">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Reply.QM.Name" name="Reply.QM.Name" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Reply.Queue.name" name="Reply.Queue.name" lowerBound="1"  defaultValueLiteral="DUMMY">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.waitInterval" name="waitInterval" lowerBound="1"  defaultValueLiteral="1000">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.replyToQ" name="replyToQ" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.messageTypeProperty" name="messageTypeProperty" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.messageDomainProperty" name="messageDomainProperty"  defaultValueLiteral="XMLNSC">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.messageSetProperty" name="messageSetProperty" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.messageFormatProperty" name="messageFormatProperty" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscBuildTreeUsingXMLSchema" name="parserXmlnscBuildTreeUsingXMLSchema" lowerBound="1"  defaultValueLiteral="false">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscBuildTreeUsingXMLSchema.internal_npcompiler" name="parserXmlnscBuildTreeUsingXMLSchema.internal_npcompiler" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.validateTiming" name="validateTiming" lowerBound="1" eType="//@eClassifiers.1"   defaultValueLiteral="deferred"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscCommentsRetainMode" name="parserXmlnscCommentsRetainMode" lowerBound="1" eType="//@eClassifiers.2"   defaultValueLiteral="none"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscMixedContentRetainMode" name="parserXmlnscMixedContentRetainMode" lowerBound="1" eType="//@eClassifiers.3"   defaultValueLiteral="none"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscProcessingInstructionsRetainMode" name="parserXmlnscProcessingInstructionsRetainMode" lowerBound="1" eType="//@eClassifiers.4"   defaultValueLiteral="none"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserMqrfh2cUseForMqrfh2Domain" name="parserMqrfh2cUseForMqrfh2Domain" lowerBound="1"  defaultValueLiteral="false">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserMqrfh2cUseForMqrfh2Domain.internal_npcompiler" name="parserMqrfh2cUseForMqrfh2Domain.internal_npcompiler" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscUseForXmlnsDomain" name="parserXmlnscUseForXmlnsDomain" lowerBound="1"  defaultValueLiteral="false">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.parserXmlnscUseForXmlnsDomain.internal_npcompiler" name="parserXmlnscUseForXmlnsDomain.internal_npcompiler" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.validateMaster" name="validateMaster" lowerBound="1" eType="//@eClassifiers.5"   defaultValueLiteral="none"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.validateFailureAction" name="validateFailureAction" lowerBound="1" eType="//@eClassifiers.6"   defaultValueLiteral="exception"/>
+<translation xmi:type="utility:TranslatableString" key="MQRequestResponse" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+<colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj16/MQRequestResponse.gif"/>
+<colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj30/MQRequestResponse.gif"/>
+<composition>
+<nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="34,126">
+<translation xmi:type="utility:TranslatableString" key="InTerminal.Input" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="535,142">
+<translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="244,138" transactionMode="no" request="true">
+<translation xmi:type="utility:ConstantString" string="MQ Output"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+<monitorEvents eventSourceDescription="In terminal" eventSourceName="MQ Output.terminal.in" eventIdentity="$Environment/env:ESB/Var/Log/Invocation/RequestName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData encoding="base64Binary" />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Invocation/RequestName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+</nodes>
+<nodes xmi:type="ComIbmFilter.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="105,126" filterExpression="esql://routine/Request#MQRequestResponse_Set_Environment.Main">
+<translation xmi:type="utility:ConstantString" string="Set Environment"/>
+</nodes>
+<nodes xmi:type="ComIbmMQGet.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="435,146" messageDomainProperty="XMLNSC" generateMode="messageAndLocalEnvironment" copyMessage="copyEntireMessage" getWithCorrelID="true">
+<translation xmi:type="utility:ConstantString" string="MQ Get"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+<monitorEvents eventSourceDescription="Out terminal" eventSourceName="MQ Get.terminal.out" eventIdentity="$Environment/env:ESB/Var/Log/Invocation/ResponseName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData encoding="base64Binary" />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Invocation/ResponseName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+<monitorEvents eventSourceDescription="Warning terminal" eventSourceName="MQ Get.terminal.warning" eventIdentity="$Environment/env:ESB/Var/Log/Invocation/ResponseName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData encoding="base64Binary" />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Invocation/ResponseName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+<monitorEvents eventSourceDescription="No Message terminal" eventSourceName="MQ Get.terminal.noMessage" eventIdentity="$Environment/env:ESB/Var/Log/Invocation/TimeoutName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData encoding="base64Binary" />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Invocation/TimeoutName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+</nodes>
+<nodes xmi:type="ComIbmMQHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="332,142" mqmdAAAOptions="Modify header" mqmdCodedCharSetId="Inherit" mqmdFormat="Inherit" mqmdMsgType="Inherit" mqmdExpiry="Inherit" mqmdFeedback="Inherit" mqmdMsgId="Inherit" mqmdCorrelId="$LocalEnvironment/WrittenDestination/MQ/DestinationData[1]/msgId" mqmdReplyToQ="Inherit" mqmdReplyToQMgr="Inherit">
+<translation xmi:type="utility:ConstantString" string="Copy MsgId"/>
+</nodes>
+<nodes xmi:type="ComIbmMQHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="163,48" mqmdAAAOptions="Add header" mqmdCodedCharSetId="MQCCSI_Q_MGR" mqmdFormat="MQFMT_NONE" mqmdVersion="MQMD_CURRENT_VERSION" mqmdMsgType="MQMT_REQUEST" mqmdExpiry="MQEI_UNLIMITED" mqmdFeedback="MQFB_NONE" mqmdPriority="MQPRI_PRIORITY_AS_Q_DEF" mqmdPersistence="MQPER_PERSISTENCE_AS_Q_DEF" mqmdMsgId="MQMI_NONE" mqmdCorrelId="MQCI_NONE">
+<translation xmi:type="utility:ConstantString" string="Create MQ Header"/>
+</nodes>
+<nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output1" location="536,205">
+<translation xmi:type="utility:TranslatableString" key="OutTerminal.Timeout" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+</nodes>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_1" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.true" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.false" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_1" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_8" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.warning" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="OutTerminal.Output1" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.noMessage" targetTerminalName="InTerminal.in"/>
+</composition>
+<propertyOrganizer>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.System_Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.System_Name" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+<propertyDescriptor groupName="Group.Request.Response" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQOutputQueueManagerEditor" configurable="true" describedAttribute="Property.Request.QM.Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Request.QM.Name" bundleName="Request/MQRequestResponse" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.Request.Response" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.Request.Queue.Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Request.Queue.Name" bundleName="Request/MQRequestResponse" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.Request.Response" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.RequestListenerPropertyEditor" configurable="true" describedAttribute="Property.Reply.QM.Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Reply.QM.Name" bundleName="Request/MQRequestResponse" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.Request.Response" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.Reply.Queue.name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Reply.Queue.name" bundleName="Request/MQRequestResponse" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.Request.Response" describedAttribute="Property.waitInterval">
+<propertyName xmi:type="utility:TranslatableString" key="Property.waitInterval" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Request.Response" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.RequestListenerPropertyEditor" configurable="true" describedAttribute="Property.replyToQ">
+<propertyName xmi:type="utility:TranslatableString" key="Property.replyToQ" bundleName="ComIbmMQOutput" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Message.Parsing" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQMessageTypeEditor" describedAttribute="Property.messageTypeProperty">
+<propertyName xmi:type="utility:TranslatableString" key="Property.messageTypeProperty" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Message.Parsing" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQMessageDomainEditor" describedAttribute="Property.messageDomainProperty">
+<propertyName xmi:type="utility:TranslatableString" key="Property.messageDomainProperty" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Message.Parsing" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.MRMessageSetNamePropertyEditorV8" describedAttribute="Property.messageSetProperty">
+<propertyName xmi:type="utility:TranslatableString" key="Property.messageSetProperty" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Message.Parsing" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.MRMessageFormatPropertyEditor" describedAttribute="Property.messageFormatProperty">
+<propertyName xmi:type="utility:TranslatableString" key="Property.messageFormatProperty" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.BuildTreePropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.BooleanPropertyCompiler" describedAttribute="Property.parserXmlnscBuildTreeUsingXMLSchema">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscBuildTreeUsingXMLSchema" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.InternalRuntimeGroup" userDefined="true" hidden="true" readOnly="true" describedAttribute="Property.parserXmlnscBuildTreeUsingXMLSchema.internal_npcompiler">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscBuildTreeUsingXMLSchema.internal_npcompiler" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" describedAttribute="Property.validateTiming">
+<propertyName xmi:type="utility:TranslatableString" key="Property.validateTiming" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.XmlnscPropertyEditor" describedAttribute="Property.parserXmlnscCommentsRetainMode">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscCommentsRetainMode" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.XmlnscPropertyEditor" describedAttribute="Property.parserXmlnscMixedContentRetainMode">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscMixedContentRetainMode" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.XmlnscPropertyEditor" describedAttribute="Property.parserXmlnscProcessingInstructionsRetainMode">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscProcessingInstructionsRetainMode" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.BooleanEditorWithCheckboxInFront" compiler="com.ibm.etools.mft.ibmnodes.compilers.BooleanPropertyCompiler" describedAttribute="Property.parserMqrfh2cUseForMqrfh2Domain">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserMqrfh2cUseForMqrfh2Domain" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.InternalRuntimeGroup" userDefined="true" hidden="true" readOnly="true" describedAttribute="Property.parserMqrfh2cUseForMqrfh2Domain.internal_npcompiler">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserMqrfh2cUseForMqrfh2Domain.internal_npcompiler" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+<propertyDescriptor groupName="Group.Response.Parser.Options" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.XmlnsMessageDomainPropertyEditor" compiler="com.ibm.etools.mft.ibmnodes.compilers.BooleanPropertyCompiler" describedAttribute="Property.parserXmlnscUseForXmlnsDomain">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscUseForXmlnsDomain" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.InternalRuntimeGroup" userDefined="true" hidden="true" readOnly="true" describedAttribute="Property.parserXmlnscUseForXmlnsDomain.internal_npcompiler">
+<propertyName xmi:type="utility:TranslatableString" key="Property.parserXmlnscUseForXmlnsDomain.internal_npcompiler" bundleName="Request/MQRequestResponse" pluginId="flowAPIgenerated"/>
+<propertyDescriptor groupName="Group.Response.Validation" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.ValidateMasterForOpaqueParsingAndBuildTreePropertyEditor" configurable="true" describedAttribute="Property.validateMaster">
+<propertyName xmi:type="utility:TranslatableString" key="Property.validateMaster" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+<propertyDescriptor groupName="Group.Response.Validation" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.ValidateMasterListenerPropertyEditor" describedAttribute="Property.validateFailureAction">
+<propertyName xmi:type="utility:TranslatableString" key="Property.validateFailureAction" bundleName="ComIbmMQGet" pluginId="com.ibm.etools.mft.ibmnodes"/>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyOrganizer>
+<attributeLinks promotedAttribute="Property.Request.QM.Name" overriddenNodes="FCMComposite_1_1">
+<overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueManagerName"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.Request.Queue.Name" overriddenNodes="FCMComposite_1_1">
+<overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.Reply.QM.Name" overriddenNodes="FCMComposite_1_1">
+<overriddenAttribute href="ComIbmMQOutput.msgnode#Property.replyToQMgr"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.Reply.Queue.name" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.queueName"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.waitInterval" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.waitInterval"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.replyToQ" overriddenNodes="FCMComposite_1_1">
+<overriddenAttribute href="ComIbmMQOutput.msgnode#Property.replyToQ"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.messageTypeProperty" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.messageTypeProperty"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.messageDomainProperty" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.messageDomainProperty"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.messageSetProperty" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.messageSetProperty"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.messageFormatProperty" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.messageFormatProperty"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.parserXmlnscBuildTreeUsingXMLSchema" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.parserXmlnscBuildTreeUsingXMLSchema"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.validateTiming" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.validateTiming"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.parserXmlnscCommentsRetainMode" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.parserXmlnscCommentsRetainMode"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.parserXmlnscMixedContentRetainMode" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.parserXmlnscMixedContentRetainMode"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.parserXmlnscProcessingInstructionsRetainMode" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.parserXmlnscProcessingInstructionsRetainMode"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.parserMqrfh2cUseForMqrfh2Domain" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.parserMqrfh2cUseForMqrfh2Domain"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.parserXmlnscUseForXmlnsDomain" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.parserXmlnscUseForXmlnsDomain"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.validateMaster" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.validateMaster"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.validateFailureAction" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="ComIbmMQGet.msgnode#Property.validateFailureAction"/>
+</attributeLinks>
+<stickyBoard/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="validateTiming.deferred" name="deferred" />
+<eLiterals xmi:id="validateTiming.immediate" name="immediate" value="1"/>
+<eLiterals xmi:id="validateTiming.complete" name="complete" value="2"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="parserXmlnscCommentsRetainMode.none" name="none" />
+<eLiterals xmi:id="parserXmlnscCommentsRetainMode.all" name="all" value="1"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="parserXmlnscMixedContentRetainMode.none" name="none" />
+<eLiterals xmi:id="parserXmlnscMixedContentRetainMode.all" name="all" value="1"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="parserXmlnscProcessingInstructionsRetainMode.none" name="none" />
+<eLiterals xmi:id="parserXmlnscProcessingInstructionsRetainMode.all" name="all" value="1"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="validateMaster.none" name="none" />
+<eLiterals xmi:id="validateMaster.contentAndValue" name="contentAndValue" value="1"/>
+<eLiterals xmi:id="validateMaster.content" name="content" value="2"/>
+<eLiterals xmi:id="validateMaster.inherit" name="inherit" value="3"/>
+</eClassifiers>
+<eClassifiers xmi:type="ecore:EEnum">
+<eLiterals xmi:id="validateFailureAction.userTrace" name="userTrace" />
+<eLiterals xmi:id="validateFailureAction.localError" name="localError" value="1"/>
+<eLiterals xmi:id="validateFailureAction.exception" name="exception" value="2"/>
+<eLiterals xmi:id="validateFailureAction.exceptionList" name="exceptionList" value="3"/>
+</eClassifiers>
+</ecore:EPackage>

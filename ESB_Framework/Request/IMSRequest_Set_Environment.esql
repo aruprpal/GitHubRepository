@@ -1,0 +1,16 @@
+BROKER SCHEMA Request
+
+CREATE FILTER MODULE IMSRequest_Set_Environment
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rService REFERENCE TO Environment.*:ESB.Var;
+		SET rService.SystemName = System_Name;
+		DECLARE rInput REFERENCE TO rService.Log.Invocation;
+		DECLARE cPrefix CHAR rService.ServiceName || '_' || rService.OperationName || '_' || rService.Version || '_' || System_Name;
+		SET rInput.RequestName  = cPrefix || '_Request';
+		SET rInput.ResponseName = cPrefix || '_Response';
+		SET rInput.TimeoutName  = cPrefix || '_Timeout';
+		SET rInput.FaultName    = cPrefix || '_Fault';
+		RETURN TRUE;
+	END;
+END MODULE;

@@ -1,0 +1,19 @@
+BROKER SCHEMA Request
+
+
+CREATE FILTER MODULE MQRequestResponse_Set_Environment
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rInv REFERENCE TO Environment.*:ESB.Var.Log;
+		CREATE LASTCHILD OF rInv AS rInv NAME 'Invocation';	
+		DECLARE rService REFERENCE TO Environment.*:ESB.Var;
+		
+		DECLARE cPrefix CHAR rService.ServiceName || '_' || rService.OperationName || '_' || rService.Version || '_' || System_Name;
+		SET rInv.RequestName  = cPrefix || '_Request';
+		SET rInv.ResponseName = cPrefix || '_Response';
+		SET rInv.TimeoutName  = cPrefix || '_Timeout';
+		SET rInv.FaultName    = cPrefix || '_Fault';
+		RETURN EXISTS(Root.MQMD[]);
+	END;
+
+END MODULE;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.esb.ibm.com/iib/framework/exception" xmlns:ens="http://www.esb.ibm.com/iib/framework/exception">
+    <xsd:element name="Root" type="ens:RootType"></xsd:element>
+
+    <xsd:complexType name="RootType">
+    	<xsd:sequence>
+    		<xsd:element name="Properties" type="ens:AnyType"></xsd:element>
+    		<xsd:element name="Environment" type="ens:AnyType"></xsd:element>
+    		<xsd:element name="ExceptionList" type="ens:AnyType"></xsd:element>
+    		<xsd:element name="Payload" type="ens:AnyType"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="AnyType">
+    	<xsd:sequence>
+    		<xsd:any></xsd:any>
+    	</xsd:sequence></xsd:complexType>
+
+    <xsd:complexType name="EnvironmentType"></xsd:complexType>
+</xsd:schema>

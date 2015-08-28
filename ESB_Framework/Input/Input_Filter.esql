@@ -1,0 +1,41 @@
+BROKER SCHEMA Input
+
+
+-- DECLARE UDP variables
+DECLARE Service_Name EXTERNAL CHARACTER '';
+DECLARE Operation_Name EXTERNAL CHARACTER '';
+DECLARE Version EXTERNAL CHARACTER '';
+
+CREATE FILTER MODULE Input_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE rEnv REFERENCE TO Environment;
+		DECLARE rInv REFERENCE TO Environment;
+		CREATE LASTCHILD OF rEnv AS rEnv DOMAIN 'XMLNSC' NAMESPACE 'http://www.esb.ibm.com/iib/framework/environment' NAME 'ESB';
+		CREATE LASTCHILD OF rEnv AS rInv NAME 'Var';
+		SET rInv.ServiceName = Service_Name;
+		SET rInv.OperationName = Operation_Name;
+		SET rInv.Version = Version;
+		SET rInv.UniqueTransactionId = SUBSTRING(CAST(COALESCE(LocalEnvironment.Destination.SOAP.Reply.ReplyIdentifier, Root.MQMD.MsgId) AS CHAR) FROM 3);
+		SET rInv.UniqueTransactionId = SUBSTRING(rInv.UniqueTransactionId BEFORE '''');
+		
+		IF EXISTS(Root.MQMD[]) THEN
+			DECLARE rHeader REFERENCE TO rInv;
+			CREATE LASTCHILD OF rHeader AS rHeader NAME 'Headers';
+			CREATE LASTCHILD OF rHeader AS rHeader NAME 'MQ';
+			SET rHeader.ReplyToQ = COALESCE(Root.MQMD.ReplyToQ,'');
+			SET rHeader.ReplyToQMgr = COALESCE(Root.MQMD.ReplyToQMgr,'');
+			SET rHeader.MsgId = COALESCE(Root.MQMD.MsgId,'');
+		END IF;
+		
+		DECLARE rInput REFERENCE TO rInv;
+		CREATE LASTCHILD OF rInput AS rInput NAME 'Log';
+		CREATE LASTCHILD OF rInput AS rInput NAME 'Input';
+		DECLARE cPrefix CHAR Service_Name || '_' || Operation_Name || '_' || Version;
+		SET rInput.InputName = cPrefix || '_Input';
+		SET rInput.ReplyName = cPrefix || '_Reply';
+		SET rInput.ErrorName = cPrefix || '_Error';
+		
+		RETURN TRUE;
+	END;
+END MODULE;

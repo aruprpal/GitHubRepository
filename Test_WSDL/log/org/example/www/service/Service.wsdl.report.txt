@@ -1,0 +1,23 @@
+
+
+Importing file: C:\Arup\ABN AMRO\Workspaces\IIBTestWorkspace\Test_WSDL\Service.wsdl
+
+Copying source WSDL Service.wsdl to Service.wsdl.
+The WSDL import will proceed with bindings ServiceSOAP.
+Creating wsdl schema document for file:///C:/Arup/ABN AMRO/Workspaces/IIBTestWorkspace/Test_WSDL/Service.wsdl.
+Parsing wsdl binding {http://www.example.org/Service/}ServiceSOAP.
+Parsing wsdl binding input testOperation.
+Parsing wsdl binding output testOperation.
+Processing doc style for operation testOperation.
+Populating WSDL schema Service.xsd.
+Creating file Service.xsd in the workspace.
+Creating file Service_InlineSchema1_wsdl.xsd in the workspace.
+Creating file Service_InlineSchema1.xsd in the workspace.
+
+Elapsed time processing this message definition file: 0.586 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

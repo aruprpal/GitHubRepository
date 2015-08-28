@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmPassthru.msgnode="ComIbmPassthru.msgnode" xmlns:ComIbmFilter.msgnode="ComIbmFilter.msgnode" xmlns:ComIbmSOAPExtract.msgnode="ComIbmSOAPExtract.msgnode" xmlns:ComIbmHTTPHeader.msgnode="ComIbmHTTPHeader.msgnode" xmlns:mbmonitor="http://www.ibm.com/wbi/2008/eflow_mbmonitor" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" 
+xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="Request/EndSyncSOAPRequest.subflow" 
+nsPrefix="Request_EndSyncSOAPRequest.subflow">
+<eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" useDefaults="true" udpSupport="true">
+<eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Extract_Soap_Body" name="Extract_Soap_Body" lowerBound="1" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Remove_Response_Header" name="Remove_Response_Header" lowerBound="1" >
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+</eStructuralFeatures>
+<translation xmi:type="utility:TranslatableString" key="EndSyncSOAPRequest" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+<colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj16/EndSyncSOAPRequest.gif"/>
+<colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj30/EndSyncSOAPRequest.gif"/>
+<composition>
+<nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="20,20">
+<translation xmi:type="utility:TranslatableString" key="InTerminal.OutIn" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="637,29">
+<translation xmi:type="utility:TranslatableString" key="OutTerminal.Out" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="ComIbmPassthru.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="72,20">
+<translation xmi:type="utility:ConstantString" string="Log SOAP Response"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+<monitorEvents eventSourceDescription="In terminal" eventSourceName="Log SOAP Response.terminal.in" eventIdentity="$Environment/env:ESB/Var/Log/Invocation/ResponseName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData encoding="base64Binary" />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Invocation/ResponseName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+</nodes>
+<nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input1" location="18,226">
+<translation xmi:type="utility:TranslatableString" key="InTerminal.FaultIn" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="ComIbmPassthru.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="91,226">
+<translation xmi:type="utility:ConstantString" string="Log SOAP Fault"/>
+<nsMappingTable nsPrefix="env" namespace="http://www.esb.ibm.com/iib/framework/environment"/>
+<monitorEvents eventSourceDescription="In terminal" eventSourceName="Log SOAP Fault.terminal.in" eventIdentity="$Environment/env:ESB/Var/Log/Invocation/FaultName" >
+<eventXMLDoc xmi:type="mbmonitor:MonitorEvent" eventUOW="none" >
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/ServiceName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/OperationName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<applicationData complexData="true" dataLocation="$Environment/env:ESB/Var/Version" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</applicationData>
+<globalTransactionCorrelator >
+</globalTransactionCorrelator>
+<parentTransactionCorrelator >
+</parentTransactionCorrelator>
+<localTransactionCorrelator dataLocation="$Environment/env:ESB/Var/UniqueTransactionId" eventCorrelation="dataLocation" >
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</localTransactionCorrelator>
+<bitStreamData />
+<eventName dataLocation="$Environment/env:ESB/Var/Log/Invocation/FaultName" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventName>
+<eventFilter dataLocation="true()" isXPath="true">
+<nsPrefixMap prefix="env" nsURI="http://www.esb.ibm.com/iib/framework/environment"/>
+</eventFilter>
+</eventXMLDoc>
+</monitorEvents>
+</nodes>
+<nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output1" location="623,234">
+<translation xmi:type="utility:TranslatableString" key="OutTerminal.FaultOut" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+</nodes>
+<nodes xmi:type="ComIbmFilter.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="205,20" filterExpression="esql://routine/Response#Extract_Soap_Body_Filter.Main">
+<translation xmi:type="utility:ConstantString" string="Extract Response Body?"/>
+</nodes>
+<nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="317,73">
+<translation xmi:type="utility:ConstantString" string="Extract Response Body"/>
+</nodes>
+<nodes xmi:type="ComIbmFilter.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="387,25" filterExpression="esql://routine/Response#Remove_Response_Header_Filter.Main">
+<translation xmi:type="utility:ConstantString" string="Remove Response Header?"/>
+</nodes>
+<nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="499,79" httpResponseHeader="DeleteHeader" httpRequestHeader="CarryForward" httpReplyHeader="CarryForward">
+<translation xmi:type="utility:ConstantString" string="Remove Response Header"/>
+</nodes>
+<nodes xmi:type="ComIbmFilter.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="379,230" filterExpression="esql://routine/Response#Remove_Response_Header_Filter.Main">
+<translation xmi:type="utility:ConstantString" string="Remove Fault Header?"/>
+</nodes>
+<nodes xmi:type="ComIbmSOAPExtract.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="297,281">
+<translation xmi:type="utility:ConstantString" string="Extract Fault Body"/>
+</nodes>
+<nodes xmi:type="ComIbmFilter.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="197,226" filterExpression="esql://routine/Response#Extract_Soap_Body_Filter.Main">
+<translation xmi:type="utility:ConstantString" string="Extract Fault Body?"/>
+</nodes>
+<nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="491,285" httpResponseHeader="DeleteHeader">
+<translation xmi:type="utility:ConstantString" string="Remove Fault Header"/>
+</nodes>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_2" sourceNode="InTerminal.Input1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.true" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.false" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.false" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_8" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.true" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="OutTerminal.Output" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_10" targetNode="FCMComposite_1_8" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.true" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_11" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.false" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_12" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_8" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_13" targetNode="FCMComposite_1_10" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.true" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_14" targetNode="OutTerminal.Output1" sourceNode="FCMComposite_1_10" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_15" targetNode="OutTerminal.Output1" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.false" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_16" targetNode="FCMComposite_1_9" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+</composition>
+<propertyOrganizer>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.Extract_Soap_Body">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Extract_Soap_Body" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.Remove_Response_Header">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Remove_Response_Header" bundleName="Request/EndSyncSOAPRequest" pluginId="flowAPIgenerated"/>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyOrganizer>
+<stickyBoard/>
+</eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,25 @@
+BROKER SCHEMA Reply
+
+CREATE FILTER MODULE SendReply_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE	nEnv NAMESPACE 'http://www.esb.ibm.com/iib/framework/environment'; 
+		IF (EXISTS(Environment.nEnv:ESB.Var.Headers.MQ.ReplyToQ[]) AND TRIM(Environment.nEnv:ESB.Var.Headers.MQ.ReplyToQ) <> '') THEN
+			RETURN TRUE;
+		ELSE
+			LOG EVENT VALUES('ReplyToQ name not specified in message MQMD of the input message',Environment.nEnv:ESB.Var.ServiceName,Environment.nEnv:ESB.Var.OperationName,Environment.nEnv:ESB.Var.Version,Environment.nEnv:ESB.Var.SystemName,Environment.nEnv:ESB.Var.Headers.MQ.MsgId);
+			RETURN FALSE;
+		END IF;
+	END;
+END MODULE;
+
+CREATE FILTER MODULE AddMQMD_Filter
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		IF EXISTS(Root.MQMD[]) THEN
+			RETURN FALSE;
+		ELSE
+			RETURN TRUE;
+		END IF;
+	END;
+END MODULE;
