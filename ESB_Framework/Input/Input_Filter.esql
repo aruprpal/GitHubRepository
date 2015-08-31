@@ -34,7 +34,7 @@ CREATE FILTER MODULE Input_Filter
 		DECLARE cPrefix CHAR Service_Name || '_' || Operation_Name || '_' || Version;
 		SET rInput.InputName = cPrefix || '_Input';
 		SET rInput.ReplyName = cPrefix || '_Reply';
-		SET rInput.ErrorName = cPrefix || '_Error';
+		--SET rInput.ErrorName = cPrefix || '_Error';
 		
 		RETURN TRUE;
 	END;
